@@ -1,0 +1,10 @@
+$breakpoints: ('phone': 599px, 'desktop': 1280px)
+
+@mixin screen($breakpoint) 
+
+    @if map-has-key($breakpoints, $breakpoint) 
+        @media (max-width: map-get($breakpoints, $breakpoint)) 
+            @content
+
+    @else
+        @warn "`#{$breakpoint} can not be found. Available brakpoints are: #{map-keys($breakpoints)}."
