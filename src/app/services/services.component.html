@@ -1,1 +1,43 @@
-<p>services works!</p>
+<div class="container" appFullView>
+
+    <div class="arrow-up">
+        <app-arrow type='up' elementId='#header' color='dark'></app-arrow>
+    </div>
+
+    <div class="header">
+        <h2>
+            Usługi
+        </h2>
+    </div>
+
+    <div class="services">
+
+        <p>Suspendisse massa purus, vehicula tempus sodales 
+            eu, volutpat fringilla felis.</p>
+
+        <p>Morbi a dui at arcu venenatis luctus. Proin 
+            sagittis purus ut justo blandit elementum.</p>
+
+        <p>Class aptent taciti sociosqu ad litora 
+            torquent per conubia nostra.</p>
+
+    </div>
+
+    <div class="text">
+
+        <p>Aliquam tincidunt scelerisque ullamcorper. 
+            Proin ut sodales tellus. Class aptent taciti 
+            sociosqu ad litora torquent per conubia nostra, 
+            per inceptos himenaeos.</p>
+
+    </div>
+
+    <div class="navbar">
+        <app-navbar [items]='["o mnie", "usługi", "kontakt"]' activeItem="usługi" color='dark'></app-navbar>
+    </div>
+
+    <div class="arrow-down">
+        <app-arrow type='down' elementId='#services' color='dark'></app-arrow>
+    </div>
+
+</div>

@@ -1,13 +1,13 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'navbar',
+  selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.sass']
 })
 export class NavbarComponent implements OnInit {
 
-  @Input() currentItem: string;
+  @Input() activeItem: string;
   @Input() items: Array<string>;
   @Input() color: string;
 

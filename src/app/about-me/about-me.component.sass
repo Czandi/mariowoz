@@ -1,0 +1,75 @@
+@import '../variables'
+@import '../responsive.mixin'
+
+.container
+    text-align: center
+    position: relative
+
+.content
+    height: 100vh
+    width: 750px
+    margin-left: auto
+    margin-right: auto
+    background-color: $grey
+    border-radius: 5px
+
+p
+    color: white
+    position: absolute
+    left: 0
+    right: 0
+    margin-left: auto
+    margin-right: auto
+    width: 450px
+    height: fit-content
+    top: 35vh
+
+.header
+    position: absolute
+    width: 750px
+    top: 18vh
+
+h2
+    color: white
+    margin: 0
+
+h3
+    color: rgba(255, 255, 255, 0.5)
+    margin: -10px 0 0 0 
+    font-size: 15pt
+
+.arrow-up, .arrow-down, .navbar
+    position: absolute
+    width: fit-content
+    height: fit-content
+    left: 0
+    right: 0
+    margin-left: auto
+    margin-right: auto
+
+.arrow-up
+    top: 30px
+
+.arrow-down
+    bottom: 30px
+
+.navbar
+    bottom: 100px
+
+.icon-1, .icon-2
+    position: absolute
+    width: fit-content
+    height: fit-content
+    top: 50%
+    left: 0
+    margin-left: auto
+    right: 0
+    margin-right: auto
+
+.icon-1
+    transform: translateY(-50%) translateX(-60%)
+
+.icon-2
+    transform: translateY(-50%) translateX(60%)
+
+
