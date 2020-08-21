@@ -1,0 +1,84 @@
+@import '../variables'
+@import '../responsive.mixin'
+    
+.navbar
+    top: 10vh
+
+.content
+    color: white
+    height: 95vh
+    width: 500px
+    background-color: $grey
+    border-radius: 5px
+
+.header, .contact, .icons, .background-wrench, .content, .footer
+    position: absolute
+    left: 50%
+    transform: translateX(-50%)
+
+.header
+    top: 30vh
+    h3
+        margin-top: -10px
+
+.contact
+    width: fit-content
+    top: 50vh
+
+.arrow-down
+    padding-bottom: 4vh
+
+.footer
+    height: 5vh
+    width: fit-content
+    bottom: 0
+    p
+        line-height: 5vh
+        font-size: 10pt
+        letter-spacing: 5px
+        b
+            font-size: 10pt
+
+.contact-icons, .contact-data
+    display: inline-block
+
+.contact-data
+    margin-left: 50px
+
+.phone, .email, .nip
+    display: block
+
+.email
+    margin-top: 30px
+    margin-bottom: 30px
+
+.icons
+    width: fit-content
+    height: fit-content
+    bottom: 7vh
+
+.settings, .screwdriver, .wrench
+    margin-left: 100px
+    &:first-child
+        margin-left: 0
+
+.background-wrench
+    transform: translateX(35%) translateY(50%)
+
+.contact-me-button
+    position: absolute
+    background-color: rgba(45, 45, 45, 0.5)
+    width: 100px
+    height: 100px
+    border-radius: 5px 0 0 5px
+    top: 30vh
+    left: 50%
+    transform: translateX(-33vh)
+    &:hover
+        cursor: pointer
+    svg
+        padding-top: 25px
+        margin-left: -40px
+
+// .content, .background-wrench, .contact-me-button
+//     left: 60%
