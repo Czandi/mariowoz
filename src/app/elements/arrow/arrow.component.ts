@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { identifierModuleUrl } from '@angular/compiler';
+import { StatesService } from 'src/app/states.service';
+import { isFormattedError } from '@angular/compiler';
 
 @Component({
   selector: 'app-arrow',
@@ -15,6 +16,25 @@ export class ArrowComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onClick(){
+
+    const element = document.getElementById(this.element_id);
+
+    element.scrollIntoView({behavior: 'smooth', block: 'end', inline: 'nearest'});
+
+    if(this.type === 'up'){
+
+      StatesService.previousState();
+
+    }else if(this.type === 'down') {
+
+      StatesService.nextState();
+      
+    }
+
+    console.log(StatesService.getCurrentState());
   }
 
 }
