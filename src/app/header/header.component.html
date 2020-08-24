@@ -1,18 +1,24 @@
-<div class='container' appFullView>
+<div class="container" appFullView>
+  <div class="content">
+    <p>Serwis wózków widłowych</p>
+    <img src="../../assets/logo-mariowoz.svg" />
+    <p>Mariusz Kasprzak</p>
+    <p class="name">Mariowóz</p>
+  </div>
 
-    <div class='content'>
-        <p>Serwis wózków widłowych</p>
-        <img src='../../assets/logo-mariowoz.svg'>
-        <p>Mariusz Kasprzak</p>
-        <p class='name'>Mariowóz</p>
-    </div>
+  <div class="navbar">
+    <app-navbar
+      [items]="['kontakt', 'usługi', 'o mnie']"
+      color="dark"
+    ></app-navbar>
+  </div>
 
-    <div class="navbar">
-        <app-navbar [items]='["kontakt", "usługi", "o mnie"]' color='dark'></app-navbar>
-    </div>
-
-    <div class="arrow-down">
-        <app-arrow clas='arrow' type='down' elementId='about-me' color='dark'></app-arrow>
-    </div>
-
+  <div class="arrow-down">
+    <app-arrow
+      clas="arrow"
+      type="down"
+      elementId="about-me"
+      color="dark"
+    ></app-arrow>
+  </div>
 </div>

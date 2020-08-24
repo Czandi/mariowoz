@@ -1,0 +1,47 @@
+@import '../../variables'
+@import '../../responsive.mixin'
+
+.container
+	z-index: 2	
+	width: 100px
+	margin-right: 0
+	right: 0
+
+.scrollbar
+	width: 100px
+	height: 100vh
+	position: relative
+	
+.header, .about-me, .services, .contact
+	height: 25vh
+	width: 25vh
+	position: absolute
+	transform: translateY(-50%) rotate(-90deg) 
+
+p
+	cursor: pointer
+	margin-top: 50px
+	padding-bottom: 20px
+	border-style: solid
+	border-width: 0 0 10px 0
+	border-color: $grey
+	transition: all .7s ease
+	user-select: none
+
+.header
+	top: 10vh
+
+.about-me
+	top: 36.6vh
+
+.services
+	top: 63.6vh
+
+.contact
+	top: 90vh
+
+.active
+	border-color: $green
+	font-weight: 600
+	// font-size: 17pt
+	margin-top: 40px

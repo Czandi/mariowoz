@@ -1,63 +1,47 @@
 import { Component, HostListener } from '@angular/core';
-import { StatesService } from './states.service'
+import { StatesService } from './states.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.sass']
+  styleUrls: ['./app.component.sass'],
 })
-
 export class AppComponent {
   title = 'mariowoz';
 
   block: Boolean = false;
 
   @HostListener('mousewheel', ['$event']) onMousewheel(event) {
+    if (!this.block) {
+      var scrollHeight;
 
-    console.log(StatesService.getCurrentState());
-
-    if(!this.block){
-
-      if(event.wheelDelta>0 && (StatesService.previousState() != null)){
-
-        const prevElementId = StatesService.getCurrentState();
-    
-        const element = document.getElementById(prevElementId); 
-
-        // console.log(element);
-
-        element.scrollIntoView({behavior: 'smooth'});
-        this.block = true
-        setTimeout(() => {
-          this.setBlock(false);
-        }, 500);
-
+      if (event.wheelDelta > 0) {
+        StatesService.previousState()
+      } else if (event.wheelDelta < 0) {
+        StatesService.nextState()
       }
 
-      if(event.wheelDelta<0 && (StatesService.nextState() != null)){
-
-        const nextElementId = StatesService.getCurrentState();
-        
-        const element = document.getElementById(nextElementId);
-
-        // console.log(element);
-
-        element.scrollIntoView({behavior: 'smooth'});
-        this.block = true;
-        setTimeout( () => {
-          this.setBlock(false);
-        }, 500);
-      
-      }
-
+      this.block = true;
+      setTimeout(() => {
+        this.setBlock(false);
+      }, 700);
     }
-
-  }
-    
-  setBlock(state: Boolean){
-      this.block = state;
   }
 
+  setBlock(state: Boolean) {
+    this.block = state;
+  }
+
+  changeMargin(scrollHeight: any) {
+    const element = document.getElementById('header');
+    const style = window.getComputedStyle(element);
+    const property = style.getPropertyValue('margin-top');
+    const getPropertyValue = property.substr(0, property.length - 2);
+
+    const newValue = Number(getPropertyValue) - scrollHeight;
+
+    element.style.marginTop = String(newValue) + 'px';
+  }
 }
 
 //TODO Repair scroll view on touchpad
