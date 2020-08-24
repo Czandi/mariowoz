@@ -14,37 +14,50 @@ export class AppComponent {
 
   @HostListener('mousewheel', ['$event']) onMousewheel(event) {
 
-    console.log(this.block);
+    console.log(StatesService.getCurrentState());
 
-    if(event.wheelDelta>0 && !this.block){
+    if(!this.block){
 
-      console.log(StatesService.getStates());
-      this.block = true
-      setTimeout(function(){
-        this.setBlock(false);
-        console.log(this.block);
-      }, 500);
+      if(event.wheelDelta>0 && (StatesService.previousState() != null)){
 
-    }
-
-    if(event.wheelDelta<0 && !this.block){
-
-      const element = document.getElementById('about-me');
-
-      element.scrollIntoView({behavior: 'smooth'});
-      this.block = true;
-      setTimeout(function(){
-        this.setBlock(false);
-        console.log(this.block);
-      }, 500);
+        const prevElementId = StatesService.getCurrentState();
     
+        const element = document.getElementById(prevElementId); 
+
+        // console.log(element);
+
+        element.scrollIntoView({behavior: 'smooth'});
+        this.block = true
+        setTimeout(() => {
+          this.setBlock(false);
+        }, 500);
+
+      }
+
+      if(event.wheelDelta<0 && (StatesService.nextState() != null)){
+
+        const nextElementId = StatesService.getCurrentState();
+        
+        const element = document.getElementById(nextElementId);
+
+        // console.log(element);
+
+        element.scrollIntoView({behavior: 'smooth'});
+        this.block = true;
+        setTimeout( () => {
+          this.setBlock(false);
+        }, 500);
+      
+      }
+
     }
 
   }
-
-  
+    
   setBlock(state: Boolean){
       this.block = state;
   }
 
 }
+
+//TODO Repair scroll view on touchpad

@@ -22,6 +22,8 @@ export class ArrowComponent implements OnInit {
 
     const element = document.getElementById(this.element_id);
 
+    console.log(this.element_id);
+
     element.scrollIntoView({behavior: 'smooth', block: 'end', inline: 'nearest'});
 
     if(this.type === 'up'){
@@ -33,8 +35,6 @@ export class ArrowComponent implements OnInit {
       StatesService.nextState();
       
     }
-
-    console.log(StatesService.getCurrentState());
   }
 
 }
