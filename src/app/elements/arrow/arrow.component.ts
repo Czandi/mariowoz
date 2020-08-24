@@ -1,11 +1,19 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { StatesService } from 'src/app/states.service';
-import { IfStmt } from '@angular/compiler';
+import { trigger, transition, style, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-arrow',
   templateUrl: './arrow.component.html',
   styleUrls: ['./arrow.component.sass'],
+  animations: [
+    trigger('fadeIn', [
+      transition(':enter', [
+        style({ marginBottom: '-100px' }),
+        animate('.5s 550ms ease', style({ marginBottom: '0' })),
+      ]),
+    ]),
+  ],
 })
 export class ArrowComponent implements OnInit {
   @Input() type: string;
@@ -44,5 +52,4 @@ export class ArrowComponent implements OnInit {
       StatesService.nextState();
     }
   }
-  
 }

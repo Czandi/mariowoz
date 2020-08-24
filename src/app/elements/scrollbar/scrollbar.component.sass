@@ -23,10 +23,15 @@ p
 	margin-top: 50px
 	padding-bottom: 20px
 	border-style: solid
-	border-width: 0 0 10px 0
-	border-color: $grey
-	transition: all .7s ease
+	border-width: 0 0 5px 0
+	border-color: rgba(45, 45, 45, 0.5)
+	transition: all .5s ease
 	user-select: none
+	color: rgba(45, 45, 45, 0.5)
+	&:hover
+		border-color: $grey
+		color: black
+		
 
 .header
 	top: 10vh
@@ -41,7 +46,13 @@ p
 	top: 90vh
 
 .active
+	cursor: default
 	border-color: $green
 	font-weight: 600
 	// font-size: 17pt
 	margin-top: 40px
+	border-width: 0 0 10px 0
+	color: black
+	&:hover
+		border-color: $green
+		color: black

@@ -7,8 +7,15 @@ p
     margin: 0
     text-align: center
     user-select: none
+    transition: all .5s ease
+    width: fit-content
+    margin-left: auto
+    margin-right: auto
     &:first-child
         letter-spacing: 3px
+    &:hover
+        margin-top: -10px
+        padding-bottom: 10px
 
 .name
     color: $green
@@ -19,6 +26,10 @@ p
 img
     padding-top: 5vh
     padding-bottom: 5vh
+    transition: all .5s ease
+    &:hover
+        padding-top: calc(5vh - 10px)
+        padding-bottom: calc(5vh + 10px)
 
 .content
     position: absolute

@@ -19,12 +19,49 @@ a
     font-size: $font-size
     font-weight: $standard-weight
 
+div:hover .underline
+    width: 70px
+    &:hover .light
+        color: $grey
+
+.underline
+    width: 0
+    transition: all .3s ease
+    border-bottom: 1px solid transparent
+    margin-left: auto
+    margin-right: auto
+
+.underline.light
+    transition: all .3s ease
+    border-color: rgba(255, 255, 255, 0.3)
+    
+.underline.dark
+    transition: all .3s ease
+    border-color: rgba(0, 0, 0, 0.4)
+
+.underline.active
+    border: none
+
 .active
     font-size: 22pt
     font-weight: $bold-weight
+    &:hover
+        cursor: default
 
 .dark
-    color: rgba(0, 0, 0, 0.5)
+    color: rgba(0, 0, 0, 0.4)
+    transition: color .3s ease
+    &:hover
+        color: rgba(0, 0, 0, 0.6)
 
 .light
-    color: rgba(255, 255, 255, 0.5)
+    transition: color .3s ease
+    color: rgba(255, 255, 255, 0.3)
+    &:hover
+        color: rgba(255, 255, 255, .5)
+    
+.light.active:hover
+    color: rgba(255, 255, 255, 0.3)
+
+.dark.active:hover
+    color: rgba(0, 0, 0, 0.4)
