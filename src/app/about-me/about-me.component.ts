@@ -24,7 +24,7 @@ export class AboutMeComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  state = 'in';
+  state: any = 'in';
 
   onEnd(event) {
     this.state = 'in';
@@ -32,4 +32,10 @@ export class AboutMeComponent implements OnInit {
       this.state = 'out';
     }
   }
+
+  onClick() {}
 }
+
+export function triggerAnimation() {}
+
+export function stopAnimation() {}
