@@ -9,7 +9,13 @@
 	padding: 50px 0 50px 0
 	border-radius: 5px 0 0 5px
 	left: 50%
+	transition: all .3s ease
 	transform: translateX(-50%)
+	&:hover
+		cursor: pointer
+
+.background.hover
+	transform: translateX(-56%)
 
 h3
 	color: $grey
@@ -38,7 +44,7 @@ input, textarea
 		outline: none
 		&::placeholder
 			opacity: 0
-			letter-spacing: 10px
+			letter-spacing: 3px
 	
 input
 	height: 2.5vh
@@ -61,3 +67,34 @@ svg
 	right: 10px
 	top: 50%
 	transform: translateY(-50%)
+	transition: all .5s ease
+
+.contact-me-button
+	position: absolute
+	background-color: rgba(45, 45, 45, 0.5)
+	width: 60px
+	height: 100px
+	border-radius: 5px 0 0 5px
+	top: 50%
+	transform: translateY(-50%) translateX(-60px)
+	transition: all .5s ease
+	&:hover
+		cursor: pointer
+		// width: 80px
+		// transform: translateY(-50%) translateX(-79px)
+		// svg
+		// 	left: 26%
+		// .backround
+		// 	left: 40%
+	svg
+		position: absolute
+		left: 23%
+
+#arrow.open
+	transform: rotate(180deg) translateY(50%) translateX(30%)
+	left: 50%
+	&:hover
+		width: 120%
+
+.open.contact-me-button
+

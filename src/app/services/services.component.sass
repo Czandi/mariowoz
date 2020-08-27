@@ -1,14 +1,22 @@
 @import '../variables'
 @import '../responsive.mixin'
 
-.header
+.content
     position: absolute
+    height: auto
+    left: 0
+    right: 0
+    top: 50%
+    transform: translateY(-65%)
+
+.header
     width: 968px
     height: fit-content
-    left: 50%
-    transform: translateX(-50%)
+    margin: 0 auto
     border-radius: 5px
     top: 15vh
+    padding-top: 7px
+    padding-bottom: 7px
     background-image: url('../../assets/services-background.png')
     h2
         width: fit-content
@@ -23,23 +31,24 @@
         margin-bottom: 30px
 
 .services 
-    position: absolute
-    left: 0
-    right: 0
     margin-left: auto
     margin-right: auto
     top: 40vh
+    margin-top: 8vh
+    margin-bottom: 8vh
     p
+        margin-bottom: 5px
+        transition: all .3s ease
         width: 300px
         display: inline-block
+        border-radius: 50%
+            
+
 
 .text
-    position: absolute
-    background-color: rgba(45, 45, 45, 0.5)
+    background-color: rgba(95, 79, 79, 0.5)
     width: 630px
     border-radius: 5px
-    left: 0
-    right: 0
     margin-left: auto
     margin-right: auto
     top: 55vh

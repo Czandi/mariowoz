@@ -2,19 +2,20 @@
     position: absolute
     left: 0
     right: 50px
-    
-.information
+
+.information, .form
     position: absolute
     left: 0
-    right: -475px
+    right: 0
+    transition: right .5s ease
+    
+.information
     z-index: 2
 
 .form
-    position: absolute
     top: 10vh
-    left: 0
-    right: 475px
     z-index: 1
+    right: 30px
 
 .app-form
     position: relative
@@ -31,4 +32,10 @@
         letter-spacing: 5px
         b
             font-size: 10pt
+
+.information.open
+    right: -475px
+
+.form.open
+    right: 475px
         
