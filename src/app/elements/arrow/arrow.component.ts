@@ -24,32 +24,18 @@ export class ArrowComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  // onClick(){
-
-  //   const element = document.getElementById(this.element_id);
-
-  //   console.log(this.element_id);
-
-  //   element.scrollIntoView({behavior: 'smooth', block: 'end', inline: 'nearest'});
-
-  //   if(this.type === 'up'){
-
-  //     StatesService.previousState();
-
-  //   }else if(this.type === 'down') {
-
-  //     StatesService.nextState();
-
-  //   }
-  // }
-
   onClick() {
     var scrollHeight;
 
-    if (this.type === 'up') {
-      StatesService.previousState();
-    } else if (this.type === 'down') {
-      StatesService.nextState();
+    // if(window.innerWidth > 425){
+      if (this.type === 'up') {
+        StatesService.previousState();
+      } else if (this.type === 'down') {
+        StatesService.nextState();
+      }
+    // }else{
+      const element = document.getElementById(this.element_id);
+      element.scrollIntoView({behavior: "smooth"});
     }
-  }
+  // }
 }

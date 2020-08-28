@@ -1,9 +1,12 @@
 @import '../../variables'
+@import '../../responsive.mixin'
     
 ul
     margin: 0
     padding: 0
     width: max-content
+    @include screen('phone')
+        margin-bottom: 17px
 
 li
     list-style: none

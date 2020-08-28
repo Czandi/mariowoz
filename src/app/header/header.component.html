@@ -1,9 +1,9 @@
-<div class="container" appFullView>
+<div class="container" (window:resize)='onResizeListener()' appFullView>
   <div class="content">
-    <p @firstEnter>Serwis wózków widłowych</p>
+    <h1 @firstEnter>Serwis wózków widłowych</h1>
     <img @fade src="../../assets/logo-mariowoz.svg" />
-    <p @secondEnter>Mariusz Kasprzak</p>
-    <p @secondEnter class="name">Mariowóz</p>
+    <h1 @secondEnter>Mariusz Kasprzak</h1>
+    <h1 @secondEnter class="name">Mariowóz</h1>
   </div>
 
   <div class="navbar">

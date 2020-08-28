@@ -1,3 +1,5 @@
+@import '../responsive.mixin.sass'
+    
 .content
     position: absolute
     left: 0
@@ -16,6 +18,7 @@
     top: 10vh
     z-index: 1
     right: 30px
+    display: none
 
 .app-form
     position: relative
@@ -32,10 +35,31 @@
         letter-spacing: 5px
         b
             font-size: 10pt
+    @include screen('phone')
+        height: 10vh
+        p
+            position: absolute
+            top: 50%
+            transform: translateY(-50%)
+            font-size: 8pt
+            line-height: 20px
+            padding: 0 5px
+            b
+                font-size: 8pt
+
 
 .information.open
     right: -475px
 
 .form.open
     right: 475px
-        
+
+i
+    font-style: normal
+    @include screen('phone')
+        display: none
+
+br
+    display: none
+    @include screen('phone')
+        display: inline-block       

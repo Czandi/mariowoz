@@ -1,7 +1,11 @@
+@import 'responsive.mixin.sass'
+    
 .background
     background-image: url('../assets/texture-background.png')
     height: 100vh
     overflow: hidden
+    // @include screen('phone')
+    //     height: auto
 
 .header
     margin-top: 0vh
@@ -15,3 +19,7 @@
 
 .contact
     margin-top: 300vh
+
+// .header, .about-me, .services, .contact
+//     @include screen('phone')
+//         margin-top: 0

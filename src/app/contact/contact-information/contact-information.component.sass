@@ -1,8 +1,15 @@
 @import '../../variables'
 @import '../../responsive.mixin'
     
+.header, .contact, .icons, .background-wrench, .content, .footer
+    position: absolute
+    left: 50%
+    transform: translateX(-50%)
+
 .navbar
     top: 10vh
+    @include screen('phone')
+        display: none
 
 .content
     color: white
@@ -10,34 +17,32 @@
     width: 500px
     background-color: $grey
     border-radius: 5px
-
-.header, .contact, .icons, .background-wrench, .content, .footer
-    position: absolute
-    left: 50%
-    transform: translateX(-50%)
+    @include screen('phone')
+        height: 90vh
+        width: 100vw
+        left: 0
+        transform: none
+        border-radius: 0
 
 .header
     top: 30vh
     h3
         margin-top: -10px
+    @include screen('phone')
+        width: 100vw
+        top: 18vh
+        h3
+            margin-top: 20px
 
 .contact
     width: 100%
     top: 50vh
+    @include screen('phone')
+        top: 50%
+        transform: translateX(-50%) translateY(-40%)
 
 .arrow-down
     padding-bottom: 4vh
-
-.footer
-    height: 5vh
-    width: 100%
-    bottom: 0
-    p
-        line-height: 5vh
-        font-size: 10pt
-        letter-spacing: 5px
-        b
-            font-size: 10pt
 
 .contact-icons, .contact-data
     display: inline-block
@@ -64,3 +69,5 @@
 
 .background-wrench
     transform: translateX(35%) translateY(50%)
+    @include screen('phone')
+        display: none

@@ -9,10 +9,12 @@ import { StatesService } from './states.service';
 export class AppComponent {
   title = 'mariowoz';
 
+  elementsArray: any
+
   block: Boolean = false;
 
   @HostListener('mousewheel', ['$event']) onMousewheel(event) {
-    if (!this.block) {
+    if (!this.block && window.innerWidth > 425) {
       var scrollHeight;
 
       if (event.wheelDelta > 0) {
@@ -32,16 +34,28 @@ export class AppComponent {
     this.block = state;
   }
 
-  changeMargin(scrollHeight: any) {
-    const element = document.getElementById('header');
-    const style = window.getComputedStyle(element);
-    const property = style.getPropertyValue('margin-top');
-    const getPropertyValue = property.substr(0, property.length - 2);
+  // changeMargin(scrollHeight: any) {
+  //   const element = document.getElementById('header');
+  //   const style = window.getComputedStyle(element);
+  //   const property = style.getPropertyValue('margin-top');
+  //   const getPropertyValue = property.substr(0, property.length - 2);
 
-    const newValue = Number(getPropertyValue) - scrollHeight;
+  //   const newValue = Number(getPropertyValue) - scrollHeight;
 
-    element.style.marginTop = String(newValue) + 'px';
+  //   element.style.marginTop = String(newValue) + 'px';
+  // }
+
+  onResize(event) {
+    // console.log('Resize')
+    // console.log(event);
+    
+    // if(window.innerWidth > 425){
+      StatesService.resizeMarginUpdate();
+    // }
+
+    // const elements: any = document.getElementsByClassName('container');
+    // for(let element of elements){
+    //   console.log(element)
+    // }
   }
 }
-
-//TODO Repair scroll view on touchpad

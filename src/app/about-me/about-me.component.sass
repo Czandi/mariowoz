@@ -8,6 +8,8 @@
     margin-right: auto
     background-color: $grey
     border-radius: 5px
+    @include screen('phone')
+        border-radius: 0
 
 p
     color: white
@@ -19,15 +21,28 @@ p
     width: 450px
     height: fit-content
     top: 35vh
+    @include screen('phone')
+        width: auto
+        padding: 0 6vh 
+        top: 50%
+        transform: translateY(-60%)
+        text-align: justify
+        text-align-last: center
 
 .header
     position: absolute
     width: 750px
     top: 18vh
+    left: 50%
+    transform: translateX(-50%)
+    @include screen('phone')
+        top: 10vh
 
 h2
     color: white
     margin: 0
+    @include screen('phone')
+        line-height: $header-font-size
 
 .icon-1, .icon-2
     position: absolute
@@ -41,8 +56,24 @@ h2
 
 .icon-1
     transform: translateY(-50%) translateX(-60%)
+    @include screen('phone')
+        z-index: 3
+        transform: translateY(-50%) translateX(-50%)
+        left: 50%
+
 
 .icon-2
     transform: translateY(-50%) translateX(205%)
+    @include screen('phone')
+        display: none
+
+path
+    @include screen('phone')
+        fill: rgba(255, 255, 255, 0.02)
+
+br
+    display: none
+    @include screen('phone')
+        display: block
 
 

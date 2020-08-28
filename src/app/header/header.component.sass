@@ -1,7 +1,7 @@
 @import '../variables'
 @import '../responsive.mixin'
 
-p
+h1
     font-family: 'Amatic SC', cursive
     font-size: 48pt
     margin: 0
@@ -11,6 +11,9 @@ p
     width: fit-content
     margin-left: auto
     margin-right: auto
+    @include screen('phone')
+        font-size: 38pt
+        line-height: 7vh
     &:first-child
         letter-spacing: 3px
     &:hover
@@ -22,14 +25,21 @@ p
     font-size: 80pt
     line-height: 100px
     letter-spacing: 3px 
+    @include screen('phone')
+        font-size: 62pt
+        margin-top: -5px
 
 img
-    padding-top: 5vh
-    padding-bottom: 5vh
+    padding-top: 4vh
+    padding-bottom: 4vh
     transition: all .5s ease
     &:hover
         padding-top: calc(5vh - 10px)
         padding-bottom: calc(5vh + 10px)
+    @include screen('phone')
+        width: 50%
+        padding-top: 2.5vh
+        padding-bottom: 2.5vh
 
 .content
     position: absolute
