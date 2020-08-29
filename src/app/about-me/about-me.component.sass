@@ -3,31 +3,33 @@
 
 .content
     height: 100%
-    width: 750px
+    width: 45vw
     margin-left: auto
     margin-right: auto
     background-color: $grey
     border-radius: 5px
-    @include screen('phone')
+    @include screen('tablet')
+        width: 100%
         border-radius: 0
 
 p
     color: white
     position: absolute
-    left: 0
-    right: 0
-    margin-left: auto
-    margin-right: auto
-    width: 450px
+    left: 50%
+    transform: translateX(-50%)
+    width: 400px
     height: fit-content
     top: 35vh
-    @include screen('phone')
-        width: auto
-        padding: 0 6vh 
+    @include screen('tablet')
+        // padding: 0 6vh 
+        // width: auto
+        width: 70vw
         top: 50%
-        transform: translateY(-60%)
+        transform: translateX(-50%) translateY(-50%)
         text-align: justify
         text-align-last: center
+    @include screen('phone')
+        transform: translateX(-50%) translateY(-60%)
     @include screen('small-phone')
         margin-top: 10vh
 
@@ -52,26 +54,33 @@ h2
     width: fit-content
     height: fit-content
     top: 50%
-    left: 0
-    margin-left: auto
-    right: 0
-    margin-right: auto
+
 
 .icon-1
-    transform: translateY(-50%) translateX(-60%)
-    @include screen('phone')
+    left: 27.5vw
+    transform: translateY(-50%) translateX(-50%)
+    @include screen('tablet')
+        left: 50%
         z-index: 3
         transform: translateY(-50%) translateX(-50%)
         left: 50%
 
+.settings
+    @include screen('tablet')
+        width: 640px
+        height: 640px
 
 .icon-2
-    transform: translateY(-50%) translateX(205%)
-    @include screen('phone')
+    left: 72.5vw
+    transform: translateY(-50%) translateX(-50%)
+    @include screen('tablet')
         display: none
 
+.screwdriver
+    @include screen('tablet')
+
 path
-    @include screen('phone')
+    @include screen('tablet')
         fill: rgba(255, 255, 255, 0.02)
 
 br

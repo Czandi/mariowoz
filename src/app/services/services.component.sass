@@ -47,8 +47,8 @@
     margin-left: auto
     margin-right: auto
     top: 40vh
-    margin-top: 6vh
-    margin-bottom: 6vh
+    margin-top: 9vh
+    margin-bottom: 9vh
     p
         margin-bottom: 5px
         transition: all .3s ease
@@ -90,7 +90,8 @@
         display: none
 
 .dots
-    margin-bottom: 12vh
+    @include screen('phone')
+        margin-bottom: 12vh
 
 .dot
     display: none

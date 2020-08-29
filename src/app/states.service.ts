@@ -1,5 +1,9 @@
+import { ScrollbarComponent } from '../app/elements/scrollbar/scrollbar.component';
+
 export class StatesService {
   private static statesList = ['header', 'about-me', 'services', 'contact'];
+
+  private static block = false;
 
   private static currentState = StatesService.statesList[0];
 
@@ -12,37 +16,53 @@ export class StatesService {
   }
 
   static setCurrentState(state: string): any {
-    if (this.statesList.includes(state)) {
+    if (this.statesList.includes(state) && !StatesService.block) {
       const previousState = this.currentState;
       this.currentState = state;
-      this.updateMargin(previousState);
       this.updateScrollBar();
+      this.updateMargin(previousState);
+      StatesService.block = true;
+      setTimeout(() => {
+        this.setBlock(false);
+      }, 700);
     }
   }
 
   static nextState(): any {
-    let currentIndex = this.statesList.indexOf(this.currentState);
-    if (currentIndex + 1 < this.statesList.length) {
-      const previousState = this.currentState;
-      this.currentState = this.statesList[currentIndex + 1];
-      this.updateMargin(previousState);
-      this.updateScrollBar();
-      return this.currentState;
-    } else {
-      return null;
+    if (!StatesService.block) {
+      let currentIndex = this.statesList.indexOf(this.currentState);
+      if (currentIndex + 1 < this.statesList.length) {
+        const previousState = this.currentState;
+        this.currentState = this.statesList[currentIndex + 1];
+        this.updateScrollBar();
+        this.updateMargin(previousState);
+        StatesService.block = true;
+        setTimeout(() => {
+          this.setBlock(false);
+        }, 700);
+        return this.currentState;
+      } else {
+        return null;
+      }
     }
   }
 
   static previousState(): any {
-    let currentIndex = this.statesList.indexOf(this.currentState);
-    if (currentIndex - 1 >= 0) {
-      const previousState = this.currentState;
-      this.currentState = this.statesList[currentIndex - 1];
-      this.updateMargin(previousState);
-      this.updateScrollBar();
-      return this.currentState;
-    } else {
-      return null;
+    if (!StatesService.block) {
+      let currentIndex = this.statesList.indexOf(this.currentState);
+      if (currentIndex - 1 >= 0) {
+        const previousState = this.currentState;
+        this.currentState = this.statesList[currentIndex - 1];
+        this.updateScrollBar();
+        this.updateMargin(previousState);
+        StatesService.block = true;
+        setTimeout(() => {
+          this.setBlock(false);
+        }, 700);
+        return this.currentState;
+      } else {
+        return null;
+      }
     }
   }
 
@@ -82,6 +102,22 @@ export class StatesService {
       scrollHeight * Math.abs(currentIndex - previousIndex) * direction;
 
     element.style.marginTop = String(newValue) + 'px';
+
+    this.updateScrollBarColor(previousState);
+  }
+
+  private static updateScrollBarColor(previousState) {
+    if (window.innerWidth <= 1024) {
+      if (this.currentState === 'about-me') {
+        ScrollbarComponent.setLightColor();
+      } else if (previousState === 'about-me') {
+        ScrollbarComponent.setDarkColor();
+      }
+    }
+  }
+
+  static setBlock(state: boolean) {
+    StatesService.block = state;
   }
 
   static resizeMarginUpdate() {

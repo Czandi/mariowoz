@@ -46,16 +46,18 @@ export class ServicesComponent implements OnInit {
   }
 
   setActiveService(index: number) {
-    if (index === -1) {
-      index = 2;
-    } else if (index === 3) {
-      index = 0;
+    if (window.innerWidth <= 425) {
+      if (index === -1) {
+        index = 2;
+      } else if (index === 3) {
+        index = 0;
+      }
+      this.dots[this.activeServiceIndex].classList.remove('active');
+      this.dots[index].classList.add('active');
+
+      this.paragraphs[0].style.marginLeft = -200 * index + 'vw';
+
+      this.activeServiceIndex = index;
     }
-    this.dots[this.activeServiceIndex].classList.remove('active');
-    this.dots[index].classList.add('active');
-
-    this.paragraphs[0].style.marginLeft = -200 * index + 'vw';
-
-    this.activeServiceIndex = index;
   }
 }

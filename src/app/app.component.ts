@@ -17,19 +17,12 @@ export class AppComponent {
   ngOn;
 
   @HostListener('mousewheel', ['$event']) onMousewheel(event) {
-    if (!this.block && window.innerWidth > 425) {
-      var scrollHeight;
-
+    if (window.innerWidth > 425 && !this.detectFirefox()) {
       if (event.wheelDelta > 0) {
         StatesService.previousState();
       } else if (event.wheelDelta < 0) {
         StatesService.nextState();
       }
-
-      this.block = true;
-      setTimeout(() => {
-        this.setBlock(false);
-      }, 700);
     }
   }
 
@@ -60,5 +53,23 @@ export class AppComponent {
   onResize(event) {
     StatesService.resizeMarginUpdate();
     FullViewDirective.updateHeight();
+  }
+
+  onWheel(event) {
+    if (window.innerWidth > 425 && this.detectFirefox()) {
+      if (event.deltaY < 0) {
+        StatesService.previousState();
+      } else if (event.deltaY > 0) {
+        StatesService.nextState();
+      }
+    }
+  }
+
+  detectFirefox() {
+    const agent = window.navigator.userAgent.toLowerCase();
+    if (agent.indexOf('firefox') > -1) {
+      return true;
+    }
+    return false;
   }
 }

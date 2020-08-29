@@ -10,6 +10,8 @@ body, *
     
 p, b
     font-size: $font-size
+    @include screen('tablet')
+        font-size: $tablet-font-size
     @include screen('phone')
         font-size: $phone-font-size
     @include screen('small-phone')
@@ -65,5 +67,7 @@ h3
 
 .navbar
     bottom: 10vh
+    @include screen('tablet')
+        bottom: 13vh
     // @include screen('phone')
         // color: blue

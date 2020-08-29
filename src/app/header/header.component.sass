@@ -42,8 +42,10 @@ img
     padding-bottom: 4vh
     transition: all .5s ease
     &:hover
-        padding-top: calc(5vh - 10px)
-        padding-bottom: calc(5vh + 10px)
+        // padding-top: calc(5vh - 10px)
+        // padding-bottom: calc(5vh + 10px)
+        padding-top: 3vh
+        padding-bottom: 5vh
     @include screen('phone')
         width: 50%
         padding-top: 2.5vh
@@ -57,3 +59,11 @@ img
     padding-top: 5vh
     left: 0
     right: 0
+
+.navbar
+    @include screen('tablet')
+        display: none
+    @include screen('phone')
+        display: block
+    @include screen('small-phone')
+        display: none
