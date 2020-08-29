@@ -19,6 +19,11 @@ h1
     &:hover
         margin-top: -10px
         padding-bottom: 10px
+    @include screen('small-phone')
+        font-size: 30pt
+        line-height: 8vh
+        width: 80%
+
 
 .name
     color: $green
@@ -28,6 +33,9 @@ h1
     @include screen('phone')
         font-size: 62pt
         margin-top: -5px
+    @include screen('small-phone')
+        font-size: 45pt
+        margin-top: -20px
 
 img
     padding-top: 4vh
@@ -40,6 +48,9 @@ img
         width: 50%
         padding-top: 2.5vh
         padding-bottom: 2.5vh
+    @include screen('small-phone')
+        padding-top: 3.5vh
+        padding-bottom: 3.5vh
 
 .content
     position: absolute

@@ -2,7 +2,7 @@
 @import '../responsive.mixin'
 
 .content
-    height: 100vh
+    height: 100%
     width: 750px
     margin-left: auto
     margin-right: auto
@@ -28,6 +28,8 @@ p
         transform: translateY(-60%)
         text-align: justify
         text-align-last: center
+    @include screen('small-phone')
+        margin-top: 10vh
 
 .header
     position: absolute
@@ -37,13 +39,14 @@ p
     transform: translateX(-50%)
     @include screen('phone')
         top: 10vh
-
+    @include screen('small-phone')
+        top: 12vh
 h2
     color: white
     margin: 0
     @include screen('phone')
         line-height: $header-font-size
-
+        
 .icon-1, .icon-2
     position: absolute
     width: fit-content

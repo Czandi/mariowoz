@@ -28,14 +28,14 @@ export class ArrowComponent implements OnInit {
     var scrollHeight;
 
     // if(window.innerWidth > 425){
-      if (this.type === 'up') {
-        StatesService.previousState();
-      } else if (this.type === 'down') {
-        StatesService.nextState();
-      }
-    // }else{
-      const element = document.getElementById(this.element_id);
-      element.scrollIntoView({behavior: "smooth"});
+    if (this.type === 'up') {
+      StatesService.previousState();
+    } else if (this.type === 'down') {
+      StatesService.nextState();
     }
+    // }else{
+    // const element = document.getElementById(this.element_id);
+    // element.scrollIntoView({behavior: "smooth"});
+  }
   // }
 }

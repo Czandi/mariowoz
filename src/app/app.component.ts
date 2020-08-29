@@ -1,5 +1,6 @@
 import { Component, HostListener } from '@angular/core';
 import { StatesService } from './states.service';
+import { FullViewDirective } from './full-view/full-view.directive';
 
 @Component({
   selector: 'app-root',
@@ -9,18 +10,20 @@ import { StatesService } from './states.service';
 export class AppComponent {
   title = 'mariowoz';
 
-  elementsArray: any
+  elementsArray: any;
 
   block: Boolean = false;
+
+  ngOn;
 
   @HostListener('mousewheel', ['$event']) onMousewheel(event) {
     if (!this.block && window.innerWidth > 425) {
       var scrollHeight;
 
       if (event.wheelDelta > 0) {
-        StatesService.previousState()
+        StatesService.previousState();
       } else if (event.wheelDelta < 0) {
-        StatesService.nextState()
+        StatesService.nextState();
       }
 
       this.block = true;
@@ -30,32 +33,32 @@ export class AppComponent {
     }
   }
 
+  ngAfterViewInit() {
+    document.getElementById('background').style.height =
+      window.innerHeight + 'px';
+
+    document.getElementById('about-me').style.marginTop =
+      window.innerHeight + 'px';
+    document.getElementById('services').style.marginTop =
+      window.innerHeight * 2 + 'px';
+    document.getElementById('contact').style.marginTop =
+      window.innerHeight * 3 + 'px';
+  }
+
   setBlock(state: Boolean) {
     this.block = state;
   }
 
-  // changeMargin(scrollHeight: any) {
-  //   const element = document.getElementById('header');
-  //   const style = window.getComputedStyle(element);
-  //   const property = style.getPropertyValue('margin-top');
-  //   const getPropertyValue = property.substr(0, property.length - 2);
+  onSwipeUp(event) {
+    StatesService.nextState();
+  }
 
-  //   const newValue = Number(getPropertyValue) - scrollHeight;
-
-  //   element.style.marginTop = String(newValue) + 'px';
-  // }
+  onSwipeDown(event) {
+    StatesService.previousState();
+  }
 
   onResize(event) {
-    // console.log('Resize')
-    // console.log(event);
-    
-    // if(window.innerWidth > 425){
-      StatesService.resizeMarginUpdate();
-    // }
-
-    // const elements: any = document.getElementsByClassName('container');
-    // for(let element of elements){
-    //   console.log(element)
-    // }
+    StatesService.resizeMarginUpdate();
+    FullViewDirective.updateHeight();
   }
 }

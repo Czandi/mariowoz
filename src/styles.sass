@@ -8,11 +8,15 @@ body, *
     font-size: $font-size
     // overflow: hidden
     
-p
+p, b
     font-size: $font-size
-    font-weight: $standard-weight
     @include screen('phone')
         font-size: $phone-font-size
+    @include screen('small-phone')
+        font-size: $small-phone-font-size
+
+p
+    font-weight: $standard-weight
 
 h2
     font-size: $header-font-size
@@ -20,6 +24,8 @@ h2
     @include screen('phone')
         font-size: $phone-header-font-size
         line-height: 5px
+    @include screen('small-phone')
+        font-size: $small-phone-header-font-size
 
 h3
     font-size: 15pt

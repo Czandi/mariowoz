@@ -30,16 +30,18 @@
         margin-top: -10px
     @include screen('phone')
         width: 100vw
-        top: 18vh
+        top: 12vh
         h3
             margin-top: 20px
+    @include screen('small-phone')
+        top: 17vh
 
 .contact
     width: 100%
     top: 50vh
     @include screen('phone')
         top: 50%
-        transform: translateX(-50%) translateY(-40%)
+        transform: translateX(-50%) translateY(-50%)
 
 .arrow-down
     padding-bottom: 4vh
@@ -52,6 +54,8 @@
 
 .phone, .email, .nip
     display: block
+    @include screen('small-phone')
+        height: 16pt
 
 .email
     margin-top: 30px
@@ -61,11 +65,18 @@
     width: 100%
     height: fit-content
     bottom: 7vh
+    @include screen('phone')
+        bottom: 12vh
 
 .settings, .screwdriver, .wrench
     margin-left: calc((100% - 195px)/3)
     &:first-child
         margin-left: 0
+    @include screen("small-phone")
+        width: 40px
+        margin-left: 20vw
+        &:first-of-type
+            margin-let: 0
 
 .background-wrench
     transform: translateX(35%) translateY(50%)

@@ -1,4 +1,10 @@
-<div class="background" id='background' (window:resize)="onResize($event)">
+<div
+  class="background"
+  (swipeup)="onSwipeUp($event)"
+  (swipedown)="onSwipeDown($event)"
+  id="background"
+  (window:resize)="onResize($event)"
+>
   <div class="scrollbar">
     <app-scrollbar></app-scrollbar>
   </div>

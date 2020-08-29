@@ -59,19 +59,6 @@ export class StatesService {
     });
   }
 
-  // private static changeMargin() {
-  //   const scrollHeight = -window.innerHeight;
-
-  //   const element = document.getElementById('header');
-  //   const style = window.getComputedStyle(element);
-  //   const property = style.getPropertyValue('margin-top');
-  //   const getPropertyValue = property.substr(0, property.length - 2);
-
-  //   const newValue = Number(getPropertyValue) - scrollHeight;
-
-  //   element.style.marginTop = String(newValue) + 'px';
-  // }
-
   static updateMargin(previousState: string) {
     const scrollHeight = window.innerHeight;
 
@@ -104,14 +91,14 @@ export class StatesService {
       const element = document.getElementById(state);
       const style = window.getComputedStyle(element);
       const property = style.getPropertyValue('margin-top');
-      const propertyValue = property.substr(0, property.length - 2);
-      if(state === 'header'){
+      // const propertyValue = property.substr(0, property.length - 2);
+      if (state === 'header') {
         const currentIndex = this.statesList.indexOf(this.currentState);
         element.style.marginTop = scrollHeight * currentIndex * -1 + 'px';
-      }else{
+      } else {
         const currentIndex = this.statesList.indexOf(state);
         element.style.marginTop = scrollHeight * currentIndex + 'px';
       }
-    })
+    });
   }
 }

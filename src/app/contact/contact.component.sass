@@ -18,7 +18,7 @@
     top: 10vh
     z-index: 1
     right: 30px
-    display: none
+    // display: none
 
 .app-form
     position: relative
@@ -37,6 +37,10 @@
             font-size: 10pt
     @include screen('phone')
         height: 10vh
+        position:absolute
+        bottom: 0
+        z-index: 3
+        color: rgba(255, 255, 255, 0.5)
         p
             position: absolute
             top: 50%
@@ -44,6 +48,12 @@
             font-size: 8pt
             line-height: 20px
             padding: 0 5px
+            b
+                font-size: 8pt
+    @include screen('small-phone')
+        p
+            letter-spacing: 1px
+            font-size: 8pt
             b
                 font-size: 8pt
 

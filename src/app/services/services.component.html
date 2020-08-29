@@ -8,21 +8,31 @@
       <h2>Usługi</h2>
     </div>
 
-    <div class="services">
-      <p>
+    <div
+      class="services"
+      (swipeleft)="onSwipeLeft($event)"
+      (swiperight)="onSwipeRight($event)"
+    >
+      <p class="first-paragraph" id="first-paragraph">
         Suspendisse <b>massa purus</b>, vehicula tempus sodales eu, volutpat
         fringilla felis.
       </p>
 
-      <p>
+      <p class="second-paragraph">
         Morbi a dui at arcu <b>venenatis luctus</b>. Proin sagittis
         <b>purus</b> ut justo blandit elementum.
       </p>
 
-      <p>
+      <p class="third-paragraph">
         Class aptent taciti sociosqu ad litora torquent per conubia
         <b>nostra</b>.
       </p>
+    </div>
+
+    <div class="dots">
+      <div class="dot active" id="first-dot"></div>
+      <div class="dot" id="second-dot"></div>
+      <div class="dot" id="third-dot"></div>
     </div>
 
     <div class="text">

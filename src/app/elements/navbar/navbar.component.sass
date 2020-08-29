@@ -7,6 +7,8 @@ ul
     width: max-content
     @include screen('phone')
         margin-bottom: 17px
+    @include screen('small-phone')
+        display: none
 
 li
     list-style: none
@@ -42,6 +44,10 @@ div:hover .underline
     transition: all .3s ease
     border-color: rgba(0, 0, 0, 0.4)
 
+.underline.dark
+    @include screen('phone')
+        border-color: transparent
+
 .underline.active
     border: none
 
@@ -56,13 +62,17 @@ div:hover .underline
     transition: color .3s ease
     &:hover
         color: rgba(0, 0, 0, 0.6)
+        @include screen('phone')
+            color: rgba(0, 0, 0, 0.4)
 
 .light
     transition: color .3s ease
     color: rgba(255, 255, 255, 0.3)
     &:hover
         color: rgba(255, 255, 255, .5)
-    
+        @include screen('phone')
+            color: rgba(255, 255, 255, 0.3)
+
 .light.active:hover
     color: rgba(255, 255, 255, 0.3)
 

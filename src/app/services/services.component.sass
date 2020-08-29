@@ -8,9 +8,11 @@
     right: 0
     top: 50%
     transform: translateY(-65%)
+    text-align: center
     @include screen('phone')
+        top: 50%    
         transform: translateY(-50%)
-        height: 100vh
+        height: auto
 
 .header
     width: 968px
@@ -32,13 +34,14 @@
         margin-top: 30px
         margin-bottom: 30px
     @include screen('phone')
-        position: absolute
-        left: 50%
-        transform: translateX(-50%)
-        top: 12vh
+        width: 90%
         h2
-            margin-top: 15px
-            margin-bottom: 15px
+            padding: 40px 50px
+    @include screen('small-phone')
+        h2
+            margin-top: 14px
+            margin-bottom: 14px
+            padding: 20px 30px
 
 .services 
     margin-left: auto
@@ -52,19 +55,16 @@
         width: 300px
         display: inline-block
         border-radius: 50%
-        @include screen('phone')
-            display: block
-            margin-top: 3vh
-            &:first-of-type
-                margin-top: 0
     @include screen('phone')
-        position: absolute
-        top: 50%
-        left: 50%
-        transform: translateY(-50%) translateX(-50%)
-        margin: 0
-            
-
+        margin-bottom: 2vh
+        margin-top: 12vh
+        width: 300vw
+        p
+            margin: 0
+            width: 90vw
+            padding: 0 5vw
+            &:first-of-type
+                margin-left: 0vw
 
 .text
     background-color: rgba(45, 45, 45, 0.5)
@@ -77,15 +77,32 @@
         padding: 25px 40px 25px 40px
         color: white
     @include screen('phone')
-        position: absolute
-        width: 85%
-        bottom: 12vh
-        left: 50%
-        transform: translateX(-50%)
+        width: 90%
         p
-            padding: 15px
+            padding: 25px 20px
             text-align: center
+    @include screen('small-phone')
+        p
+            padding: 15px 7px
 
 .navbar
     @include screen('phone')
         display: none
+
+.dots
+    margin-bottom: 12vh
+
+.dot
+    display: none
+    @include screen('phone')
+        display: inline-block
+        background-color: rgba(45, 45, 45, 0.5)
+        width: 13px
+        height: 13px
+        margin-left: 20px
+        border-radius: 50%
+        &:first-of-type
+            margin-left: 0
+
+.active
+    background-color: rgba(45, 45, 45)
