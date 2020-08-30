@@ -8,7 +8,7 @@
 
 .navbar
     top: 10vh
-    @include screen('phone')
+    @include screen('tablet')
         display: none
 
 .content
@@ -17,8 +17,8 @@
     width: 500px
     background-color: $grey
     border-radius: 5px
-    @include screen('phone')
-        height: 90vh
+    @include screen('tablet')
+        height: 100vh
         width: 100vw
         left: 0
         transform: none
@@ -26,19 +26,32 @@
 
 .header
     top: 30vh
+    color: rgba(255, 255, 255, 0.5)
     h3
         margin-top: -10px
-    @include screen('phone')
+    @include screen('tablet')
         width: 100vw
-        top: 12vh
+        top: 10vh
         h3
-            margin-top: 20px
+            width: fit-content
+            margin-left: auto
+            margin-right: auto
+            padding: 20px
+            border-style: solid
+            border-color: $green
+            border-radius: 30px
+            border-width: 3px
+            margin-top: 30px
+            color: white
     @include screen('small-phone')
         top: 17vh
 
 .contact
     width: 100%
     top: 50vh
+    @include screen('tablet')
+        top: 52.5vh
+        transform: translateX(-50%) translateY(-50%)
     @include screen('phone')
         top: 50%
         transform: translateX(-50%) translateY(-50%)
@@ -65,6 +78,9 @@
     width: 100%
     height: fit-content
     bottom: 7vh
+    @include screen('tablet')
+        top: 85vh
+        transform: translateX(-50%) translateY(-50%)
     @include screen('phone')
         bottom: 12vh
 
@@ -80,5 +96,5 @@
 
 .background-wrench
     transform: translateX(35%) translateY(50%)
-    @include screen('phone')
+    @include screen('tablet')
         display: none

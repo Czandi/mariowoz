@@ -52,16 +52,18 @@ export class ScrollbarComponent implements OnInit {
 
   static setColor(color: string, secondColor: string) {
     const scrollBar = document.getElementById('scroll-bar');
-    const pElements = scrollBar.getElementsByTagName('p');
 
+    const pElements = scrollBar.getElementsByTagName('p');
     for (let i in pElements) {
       const element = pElements[i];
-      if (!element.classList.contains('active')) {
-        pElements[i].style.borderColor = color;
-        pElements[i].style.color = color;
-      } else {
-        pElements[i].style.color = secondColor;
-        pElements[i].style.borderColor = '#3F7D20';
+      if (element.classList != undefined) {
+        if (!element.classList.contains('active')) {
+          pElements[i].style.borderColor = color;
+          pElements[i].style.color = color;
+        } else {
+          pElements[i].style.color = secondColor;
+          pElements[i].style.borderColor = '#3F7D20';
+        }
       }
     }
   }

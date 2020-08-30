@@ -16,7 +16,6 @@ export class FullViewDirective implements OnInit {
   }
 
   static updateHeight() {
-    console.log(FullViewDirective.elements);
     FullViewDirective.elements.forEach((el) => {
       el.nativeElement.style.height = window.innerHeight + 'px';
     });

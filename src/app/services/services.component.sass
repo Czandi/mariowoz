@@ -7,9 +7,9 @@
     left: 0
     right: 0
     top: 50%
-    transform: translateY(-65%)
+    transform: translateY(-50%)
     text-align: center
-    @include screen('phone')
+    @include screen('tablet')
         top: 50%    
         transform: translateY(-50%)
         height: auto
@@ -18,6 +18,7 @@
     width: 968px
     height: fit-content
     margin: 0 auto
+    // margin-top: 7vh
     border-radius: 5px
     padding-top: 7px
     padding-bottom: 7px
@@ -33,6 +34,14 @@
         margin-right: auto
         margin-top: 30px
         margin-bottom: 30px
+    @include screen('tablet')
+        width: 80%
+        padding-top: 1px
+        padding-bottom: 1px
+        h2
+            padding: 20px 30px
+            margin-top: 14px
+            margin-bottom: 14px
     @include screen('phone')
         width: 90%
         h2
@@ -55,11 +64,31 @@
         width: 300px
         display: inline-block
         border-radius: 50%
+    @include screen('tablet')
+        padding-left: 30px
+        padding-right: 30px
+        margin-left: auto
+        margin-right: auto
+        margin-top: 3vh
+        margin-bottom: 3vh
+        max-width: calc(270px * 2)
+        p
+            display: inline-block
+            width: 270px
+            margin-left: auto
+            margin-right: auto
+            margin-top: 20px
+            margin-top: 20px
+            &:first-of-type
+                margin-top: 0
     @include screen('phone')
         margin-bottom: 2vh
         margin-top: 12vh
         width: 300vw
+        max-width: none
+        padding: 0
         p
+            display: inline-block
             margin: 0
             width: 90vw
             padding: 0 5vw
@@ -72,10 +101,12 @@
     border-radius: 5px
     margin-left: auto
     margin-right: auto
-    // top: 55vh
+    margin-bottom: 3vh
     p
         padding: 25px 40px 25px 40px
         color: white
+    @include screen('tablet')
+        width: 80%
     @include screen('phone')
         width: 90%
         p
@@ -107,3 +138,6 @@
 
 .active
     background-color: rgba(45, 45, 45)
+
+.navbar
+    display: none

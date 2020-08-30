@@ -108,9 +108,9 @@ export class StatesService {
 
   private static updateScrollBarColor(previousState) {
     if (window.innerWidth <= 1024) {
-      if (this.currentState === 'about-me') {
+      if (this.currentState === 'about-me' || this.currentState === 'contact') {
         ScrollbarComponent.setLightColor();
-      } else if (previousState === 'about-me') {
+      } else if (previousState === 'about-me' || previousState === 'contact') {
         ScrollbarComponent.setDarkColor();
       }
     }

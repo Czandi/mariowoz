@@ -13,6 +13,14 @@
 	transform: translateX(-50%)
 	&:hover
 		cursor: pointer
+	@include screen('tablet')
+		backdrop-filter: blur(5px)
+		border-radius: 5px
+		margin-top: 1vh
+		max-width: 60vw
+	@include screen('phone')
+		max-width: none
+		width: 95vw
 
 .background.hover
 	transform: translateX(-56%)
@@ -24,6 +32,9 @@ h3
 	padding: 0
 	margin-bottom: 50px
 	font-size: 18pt
+	z-index: 2
+	@include screen('tablet')
+		color: white
 
 input, button, textarea
 	display: block
@@ -80,15 +91,11 @@ svg
 	transition: all .5s ease
 	&:hover
 		cursor: pointer
-		// width: 80px
-		// transform: translateY(-50%) translateX(-79px)
-		// svg
-		// 	left: 26%
-		// .backround
-		// 	left: 40%
 	svg
 		position: absolute
 		left: 23%
+	@include screen('tablet')
+		display: none
 
 #arrow.open
 	transform: rotate(180deg) translateY(50%) translateX(30%)
@@ -96,5 +103,29 @@ svg
 	&:hover
 		width: 120%
 
-.open.contact-me-button
+.close
+	display: none
+	@include screen('tablet')
+		display: block
+		position: absolute
+		color: white
+		right: 2vh
+		top: 3vh
+		font-weight: $bold-weight
+		// width: 80vw
+		height: 17px
+		width: 17px
 
+.line
+	position: absolute
+	width: 20px
+	height: 4px
+	margin-left: auto
+	margin-right: auto
+	background-color: white
+	border-radius: 5px
+	&:first-of-type
+		transform: rotate(45deg)
+	&:nth-of-type(2)
+		transform: rotate(-45deg)
+		

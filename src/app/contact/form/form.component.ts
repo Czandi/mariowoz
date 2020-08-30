@@ -35,10 +35,14 @@ export class FormComponent implements OnInit {
   }
 
   onClick() {
-    this.elArray.forEach((el) => {
-      el.classList.toggle('open');
-    });
-    this.formBackgroundElement.classList.remove('hover');
+    if (window.innerWidth > 1024) {
+      this.elArray.forEach((el) => {
+        el.classList.toggle('open');
+      });
+      this.formBackgroundElement.classList.remove('hover');
+    } else {
+      this.formElement.classList.toggle('open');
+    }
   }
 
   mouseEnter() {

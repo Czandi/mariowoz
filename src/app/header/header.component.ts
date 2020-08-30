@@ -43,7 +43,5 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  public onResizeListener(){
-    console.log("Hey!")
-  }
+  public onResizeListener() {}
 }
